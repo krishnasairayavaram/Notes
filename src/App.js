@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./Components/Navbar";
-import { About } from "./Components/About";
+import About from "./Components/About";
 import Alert from "./Components/Alert";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";

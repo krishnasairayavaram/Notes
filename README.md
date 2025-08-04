@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# 📝 Notes App – MERN Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack **Note Taking Application** built using the **MERN** (MongoDB, Express, React, Node.js) stack. Users can sign up, log in, and manage their notes with real-time CRUD operations using JWT-based authentication.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- User authentication (Signup/Login) using **JWT**
+- Create, Read, Update, and Delete (CRUD) Notes
+- Protected routes (client and server side)
+- Alert system for user feedback
+- Token-based authorization
+- Responsive UI using React and Bootstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies Used
 
-### `npm test`
+### Frontend:
+- React.js (with Hooks)
+- React Router DOM
+- Bootstrap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend:
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- JWT for Authentication
+- Bcrypt for Password Hashing
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧩 Folder Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+notebook/
+├── Backend/
+│ ├── Routes/
+│ │ ├── auth.js
+│ │ └── notes.js
+│ ├── Schemas/
+│ │ ├── User.js
+│ │ └── Note.js
+│ ├── middleware/
+│ │ └── fetchUser.js
+│ ├── database.js
+│ ├── index.js
+│ ├── package.json
+│ └── package-lock.json
+│
+├── src/
+│ ├── Components/
+│ │ ├── About.js
+│ │ ├── Addnote.js
+│ │ ├── Alert.js
+│ │ ├── Home.js
+│ │ ├── Login.js
+│ │ ├── Navbar.js
+│ │ ├── Notedem.js
+│ │ ├── Noteitem.js
+│ │ ├── Notes.js
+│ │ ├── ProtectedRoute.js
+│ │ └── Signup.js
+│ ├── context/
+│ │ └── notes/
+│ │ ├── NoteContext.js
+│ │ └── NoteState.js
+│ ├── App.js
+│ ├── App.css
+│ ├── index.js
+│ └── index.css
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ How to Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the Repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/krishnasairayavaram/Notes.git
+cd Notes
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd Backend
+npm install
+# Make sure MongoDB is running locally or set MONGO_URI in database.js
+node index.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+cd ..
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+npm run both
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🔐 API Endpoints (JWT Protected)
+Auth (/api/auth)
+POST /CreateUser – Register a new user
 
-### Advanced Configuration
+POST /login – Log in existing user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+POST /getUser – Get authenticated user info
 
-### Deployment
+Notes (/api/notes)
+GET /fetchNotes – Fetch user’s notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+POST /addNote – Add new note
 
-### `npm run build` fails to minify
+PUT /updateNote/:id – Update a note
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+DELETE /deleteNote/:id – Delete a note
+
+
+ Dependencies
+Frontend: React, React Router DOM, Bootstrap
+
+Backend: Express, Mongoose, JWT, Bcrypt, CORS
+
+Dev Tools: Nodemon, Concurrently
